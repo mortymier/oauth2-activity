@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Profile</title></head>
+<body>
+<h1>Your Profile</h1>
+<img th:src="${user.avatarUrl}" width="80"/><br/>
+<form th:action="@{/profile}" method="post">
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Display Name: <input type="text" th:field="${user.displayName}"/></p>
+    <p>Bio: <textarea th:field="${user.bio}"></textarea></p>
+    <button type="submit">Save</button>
+</form>
+<a th:href="@{/}">Logout</a>
+</body>
+</html>
